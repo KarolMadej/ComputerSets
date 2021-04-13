@@ -1,0 +1,20 @@
+<%- include ("_layouts/header"); -%>
+
+<div class="row">
+    
+    <h1 class="page-header"><%= product.title %></h1>
+    
+    <div class="col-xs-12 col-md-5">
+        <img class="spi" src="/product_images/<%= product.image %>" alt="">
+        <br>
+    </div>
+    <div class="col-xs-12 col-md-7">
+        <p><%- product.description %></p>
+        <p>$<%= parseFloat(product.price).toFixed(2) %></p>
+        <% if (user) { %>
+        <p><a href="/set/add/<%= product.slug %>">Add to set</a></p>
+        <% } %>
+    </div>
+</div>
+
+<%- include ("_layouts/footer"); -%>
